@@ -72,7 +72,6 @@ The command executes with one of the following output messages, indicating the s
 - Multi-cluster Application Management
 - Support for Workload Hibernation
 
-
 ## 💪 Trusted By
  
 The Helm Dashboard is being used and trusted by enterprises and communities all across the globe:
@@ -86,6 +85,7 @@ The Helm Dashboard is being used and trusted by enterprises and communities all 
 ## 👥 Community & Support
  
 Get updates and chat with project maintainers, contributors, and community members
+- Feel free to check out the [Documentation](https://www.docs.devtron.ai/)
 - Follow [@DevtronL](https://twitter.com/DevtronL) on Twitter
 - Raise feature requests, suggest enhancements, and report bugs in our [GitHub Issues](https://github.com/devtron-labs/helm-ui/issues)
 - Interested to contribute? Be sure to check out [Devtron on GitHub](https://github.com/devtron-labs/devtron) 🌟
