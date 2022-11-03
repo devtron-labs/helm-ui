@@ -71,8 +71,6 @@ The command executes with one of the following output messages, indicating the s
 - Optimized Resource Grouping
 - Multi-cluster Application Management
 - Support for Workload Hibernation
-- Open Source
-
 
 ## 💪 Trusted By
  
