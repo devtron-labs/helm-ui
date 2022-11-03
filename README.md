@@ -71,6 +71,7 @@ The command executes with one of the following output messages, indicating the s
 - Optimized Resource Grouping
 - Multi-cluster Application Management
 - Support for Workload Hibernation
+- Open Source
 
 
 ## 💪 Trusted By
@@ -86,6 +87,7 @@ The Helm Dashboard is being used and trusted by enterprises and communities all 
 ## 👥 Community & Support
  
 Get updates and chat with project maintainers, contributors, and community members
+- [Documentation](https://docs.devtron.ai/getting-started/install/install-devtron)
 - Follow [@DevtronL](https://twitter.com/DevtronL) on Twitter
 - Raise feature requests, suggest enhancements, and report bugs in our [GitHub Issues](https://github.com/devtron-labs/helm-ui/issues)
 - Interested to contribute? Be sure to check out [Devtron on GitHub](https://github.com/devtron-labs/devtron) 🌟
