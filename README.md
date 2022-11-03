@@ -2,16 +2,13 @@
 
 ![](https://user-images.githubusercontent.com/72245772/199556647-eed3cd12-a944-4e09-af4f-0a2d03ce742f.png)
 
-
-Helm is one of the most adopted package managers for deploying applications to Kubernetes. 
-Though it reduces the complexities of deploying applications on Kubernetes, the Helm CLI comes with several challenges that we believe can be solved with a **Helm Dashboard**.
-
 ## 📕 Overview
 
-The intuitive Helm Dashboard offers a UI-driven approach for managing the lifecycle of Helm Applications, abstracting out all the complexities and challenges.
+Helm is one of the most adopted package managers for deploying applications to Kubernetes.
+The intuitive ***Helm Dashboard*** offers a UI-driven approach for managing the lifecycle of Helm Applications, abstracting out all the complexities and challenges.
 
 Through the dashboard, one can:
-- Install and manage custom helm charts
+- Manage community and custom helm charts
 - See manifest diff of past revisions
 - Easily rollback or upgrade between different versions
 - Seamlessly integrate and deploy various charts using [Chart Groups](https://docs.devtron.ai/usage/deploy-chart/chart-group)
@@ -20,9 +17,9 @@ Through the dashboard, one can:
 
 Before you begin, you must create a [Kubernetes cluster](https://kubernetes.io/docs/tutorials/kubernetes-basics/create-cluster/) (preferably K8s 1.16 or higher) and install [Helm](https://helm.sh/docs/intro/install/).
 
-### Install Devtron with Helm Bundle
+### Install Helm Dashboard by Devtron
 
-Run the following command to install the latest version of Devtron with Helm bundle:
+Run the following command to install the latest version of Devtron:
 
 ```bash
 helm repo add devtron https://helm.devtron.ai
@@ -31,7 +28,7 @@ helm repo add devtron https://helm.devtron.ai
 helm install devtron devtron/devtron-operator --create-namespace --namespace devtroncd
 ```
 
-### Access Devtron
+### Access the dashboard
 
 **URL**: Use the following command to get the dashboard URL:
 
@@ -41,17 +38,20 @@ kubectl get svc -n devtroncd devtron-service -o jsonpath='{.status.loadBalancer.
 
 ### Credentials
 
-**UserName**:  `admin`
+**Username**:  `admin` <br>
 **Password**:   Run the following command to get the admin password: 
-(For Devtron version **v0.6.0** and higher)
-
+1. For Devtron version **v0.6.0** and higher
 ```bash
 kubectl -n devtroncd get secret devtron-secret -o jsonpath='{.data.ADMIN_PASSWORD}' | base64 -d
+```
+2. For Devtron version less than **v0.6.0**
+```bash
+kubectl -n devtroncd get secret devtron-secret -o jsonpath='{.data.ACD_PASSWORD}' | base64 -d
 ```
 
 ### Installation status
 
-The above install command starts the Devtron-operator, which takes a few minutes to spin up all of the Devtron microservices one by one. You may check the status of the installation with the following command:
+The above install command starts the **Devtron-operator**, which takes a few minutes to spin up all of the Devtron micro-services one by one. You may check the status of the installation with the following command:
 
 ```bash
 kubectl -n devtroncd get installers installer-devtron \
@@ -63,40 +63,15 @@ The command executes with one of the following output messages, indicating the s
 * **Downloaded**: The installer has downloaded all the manifests, and installation is in-progress.
 * **Applied**: The installer has successfully applied all the manifests, and the installation is complete.
 
-## 🖥 Simplified Access Management
+**Note:** For different installation methods and integrations, please refer to the [documentation](https://docs.devtron.ai/getting-started/install/install-devtron-with-cicd)
 
-The Helm Dashboard simplifies the complexity of cross-team collaboration by internally inheriting RBAC (Role Based Access Control) and at the same time, abstracting out its complexities through an intuitive UI.
+## 📍 Why Helm Dashboard by Devtron?
+- Simplified Access Management
+- Active Resources Monitoring
+- Optimized Resource Grouping
+- Multi-cluster Application Management
+- Support for Workload Hibernation
 
-The fine-grained [access management](https://docs.devtron.ai/getting-started/global-configurations/authorization/user-access) is spread out across various levels, such as: 
-- View only
-- Build and Deploy
-- Admin
-- Manager
-- Super Admin
-
-These can be easily configured for each user across various teams, within seconds!
-
-
-## 📟 Active Resources Monitoring
-
-With the dashboard, it becomes effortless to actively monitor all the Kubernetes resources deployed using Helm charts. 
-Real-time information about the `health` and `status` of the deployed application can be viewed at once through the dashboard.
-
-## 📦 Optimized Resource Grouping
-
-Debugging an application through the Helm CLI can be very challenging as the number of deployed K8s resources increase.
-
-Devtron creates a seamless debugging environment for you by providing optimized resource grouping within different `buckets`, making it easier to debug if any issue arises!
-
-You even have the power to check real-time logs of any workload and exec into the terminal, just using the Dashboard UI 🚀
-
-## ⚡️ Multi-cluster Application Management
-
-The Dashboard works as a unified platform to easily manage your deployments across a multi-cluster environment, irrespective of the cloud providers.
-
-## 💭 Support for Workload Hibernation
-
-An out-of-the-box support to quickly scale up or down your workloads within a few clicks, enables to have more control over the resources being consumed and is effective for `non-prod` or `staging` environments. 
 
 ## 💪 Trusted By
  
