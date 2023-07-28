@@ -1,6 +1,6 @@
 # Kubernetes Helm Dashboard Powered by Devtron
 
-![helm-readme-image](./assets/helm-readme-image.png)
+![helm-readme-image](./assets/k8sdashboard.png)
 
 ## 📕 Overview
 
