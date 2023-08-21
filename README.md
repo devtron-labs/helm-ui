@@ -20,11 +20,20 @@ Before you begin, you must create a [Kubernetes cluster](https://kubernetes.io/d
 
 ### Install Helm Dashboard Powered by Devtron
 
-Run the following command to install the latest version of Devtron:
+Run the following command to install the latest version of Devtron.
+
+Add the repository to your Helm Chart repository list:
 
 ```bash
 helm repo add devtron https://helm.devtron.ai
 ```
+
+Update your Helm Chart repositories to pull the latest changes from the remote registries:
+```bash
+helm repo update
+```
+
+Install the Devtron Helm Chart
 ```bash
 helm install devtron devtron/devtron-operator --create-namespace --namespace devtroncd
 ```
